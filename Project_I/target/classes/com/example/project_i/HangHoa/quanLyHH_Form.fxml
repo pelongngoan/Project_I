@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="553.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_i.HangHoa.quanLyHH_Controller">
+    <children>
+      <AnchorPane fx:id="display_Form" layoutY="-118.0" prefHeight="518.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+              <AnchorPane prefHeight="385.0" prefWidth="888.0">
+                  <children>
+                      <TableView fx:id="quanLyHH_Table" layoutX="14.0" layoutY="24.0" onMouseClicked="#getSelected" prefHeight="410.4" prefWidth="888.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="stt_HH_Col" prefWidth="45.600006103515625" text="STT" />
+                              <TableColumn fx:id="tenHang_Col" prefWidth="148.79998779296875" text="Tên hàng" />
+                              <TableColumn fx:id="maHang_Col" prefWidth="74.4000244140625" text="Mã hàng" />
+                              <TableColumn fx:id="donViTinh_Col" prefWidth="75.199951171875" text="Đơn vị tính" />
+                              <TableColumn fx:id="phanLoai_Col" prefWidth="77.5999755859375" text="Phân loại" />
+                              <TableColumn fx:id="giaNhap_Col" prefWidth="116.79998779296875" text="Giá nhập" />
+                              <TableColumn fx:id="giaXuat_Col" prefWidth="116.0" text="Giá bán buôn" />
+                              <TableColumn fx:id="giaBanLe_Col" prefWidth="142.39996337890625" text="Giá bán lẻ" />
+                              <TableColumn fx:id="tonKho_Col" prefWidth="80.800048828125" text="Tồn kho" />
+                          </columns>
+                      </TableView>
+                  </children>
+              </AnchorPane>
+              <AnchorPane layoutY="386.0" prefHeight="146.0" prefWidth="888.0">
+                  <children>
+                      <TextField fx:id="timKiem_TextField" layoutX="443.0" layoutY="61.0" />
+                      <Button fx:id="timKiemHH_Button" layoutX="619.0" layoutY="61.0" mnemonicParsing="false" text="Tìm kiếm" />
+                      <Button fx:id="suaHH_Button" layoutX="661.0" layoutY="106.0" mnemonicParsing="false" onAction="#Update" text="Chỉnh sửa" />
+                      <Button layoutX="763.0" layoutY="105.0" mnemonicParsing="false" onAction="#Delete" prefHeight="26.0" prefWidth="53.0" text="Xóa" fx:id="xoaHH_Button" />
+                      <Button fx:id="themHH_Button" layoutX="518.0" layoutY="106.0" mnemonicParsing="false" onAction="#Add" text="Thêm hàng hóa" />
+      
+                      <Label layoutX="287.0" layoutY="65.0" text="Nhập thông tin tìm kiếm :" />
+                  </children>
+              </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="themHH_Form" prefHeight="553.0" prefWidth="900.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="themForm" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="55.0" layoutY="84.0" text="Mã sản phẩm :" />
+                  <Label layoutX="54.0" layoutY="48.0" text="Nhóm sản phẩm :" />
+                  <Label layoutX="54.0" layoutY="127.0" text="Tên sản phẩm :" />
+                  <Label layoutX="69.0" layoutY="178.0" text="Đơn vị tính :" />
+                  <Label layoutX="76.0" layoutY="225.0" text="Giá nhập:" />
+                  <Label layoutX="77.0" layoutY="282.0" text="Giá xuất :" />
+                  <Button layoutX="187.0" layoutY="323.0" mnemonicParsing="false" onAction="#saveButton" text="Lưu" />
+                  <Button layoutX="374.0" layoutY="336.0" mnemonicParsing="false" text="Thoát" />
+            
+                        <TextField fx:id="nhomHH_Label" layoutX="170.0" layoutY="44.0" />
+                  <TextField fx:id="maHH_Label" layoutX="169.0" layoutY="80.0" />
+                  <TextField fx:id="tenHH_Label" layoutX="170.0" layoutY="123.0" />
+                  <TextField fx:id="donViTinh_Label" layoutX="169.0" layoutY="174.0" />
+                  <TextField fx:id="giaNhap_Label" layoutX="169.0" layoutY="221.0" />
+                  <TextField fx:id="giaXuat_Label" layoutX="166.0" layoutY="278.0" prefHeight="26.0" prefWidth="78.0" />
+                  <TextField fx:id="giaBanLe_Label" layoutX="355.0" layoutY="278.0" prefHeight="26.0" prefWidth="65.0" />
+                  <Label layoutX="158.0" layoutY="282.0" text="1" />
+                  <Label layoutX="347.0" layoutY="282.0" text="2" />
+                  <Label layoutX="170.0" layoutY="14.0" text="THÊM SẢN PHẨM MỚI">
+                     <font>
+                        <Font name="Times New Roman Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Line endX="101.29290771484375" endY="-106.80000305175781" startX="-506.0" startY="-106.80000305175781" />
+                  <Button layoutX="254.0" layoutY="324.0" mnemonicParsing="false" onAction="#Edit" text="Update" />
+               </children>
+            </AnchorPane>
+      
+               </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
